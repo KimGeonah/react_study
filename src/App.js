@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from './pages/store'
 
 
+
 function App() {
 
   const navigate = useNavigate()
@@ -26,9 +27,9 @@ function App() {
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand onClick={()=>{navigate('/')}}>프로젝트</Navbar.Brand>
+          <Navbar.Brand onClick={()=>{navigate('/shop')}}>프로젝트</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link onClick={()=>{navigate('/')}}>Home</Nav.Link>
+            <Nav.Link onClick={()=>{navigate('/shop')}}>Home</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/about')}}>About</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/about/info')}}>Information</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/cart')}}>Cart</Nav.Link>
@@ -39,9 +40,9 @@ function App() {
 
       <Routes>
 
-        <Route path='/' element={
+        <Route path='shop' element={
               <Container>
-                <img src={process.env.PUBLIC_URL+'./images/visual_main_01.jpg'} alt="vm" />
+                <img src={process.env.PUBLIC_URL+'/images/visual_main_01.jpg'} alt="vm" />
                 <h2>BEST 샐러드</h2>
               <Row>
                 {
