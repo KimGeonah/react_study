@@ -7,13 +7,15 @@ import data from './pages/productData'
 import About from './pages/About' 
 import Detail from './pages/Detail';
 import Cart from './pages/Cart';
+import Event from './pages/Event';
 
 
 import {Container,Nav,Navbar,Col,Row} from 'react-bootstrap/';
 import {Routes,Route, Link, useNavigate} from 'react-router-dom'
 import {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from './pages/store'
+import {useDispatch, useSelector } from 'react-redux';
+import {addItem } from './pages/store'
+
 
 
 function App() {
@@ -28,17 +30,22 @@ function App() {
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand onClick={()=>{navigate('/shop')}}>
+          <Navbar.Brand onClick={()=>{navigate('/')}}>
           <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt="logo" style={{width:80,cursor:"pointer"}} /></Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{navigate('/shop')}}>HOME</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/about')}}>신상품</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/about/info')}}>정기배송</Nav.Link>
+            <Nav.Link onClick={()=>{navigate('/about')}}>정기배송</Nav.Link>
+            <Nav.Link onClick={()=>{navigate('/event')}}>이벤트</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/cart')}}>장바구니</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
       <Routes>
+
+      <Route path='/' element={<div>
+          <h2 style={{fontFamily:'KBO-Dia-Gothic_bold',marginTop:70}}>슬림쿡 신규회원 이벤트, 지금 참여해보세요 !</h2>
+          <img style={{marginTop: 50,marginRight: 'auto',marginBottom: 50,marginLeft: 'auto',width:800}} src={process.env.PUBLIC_URL+'/images/main_01.jpg'} alt="main" />
+        </div>} />
 
         <Route path='shop' element={
               <Container>
@@ -67,15 +74,25 @@ function App() {
             </Container>
         }/>
 
-        
+    
+
 
         <Route path='about' element={<About/>}>
-          <Route path='info' element={<div></div>}></Route>
+          <Route path='info' element={<div>
+            GIIIII
+          </div>}></Route>
           <Route path='loca' element={<div>Location</div>}></Route>
         </Route>
 
+        <Route path='event' element={<Event/>}>
 
-        <Route path='detail/:id' element={<Detail bests={bests} />} />
+        </Route>
+
+
+
+
+        <Route path='/shop/detail/:id' element={<Detail bests={bests} />} />
+
         <Route path='cart' element={<Cart/>} />
 
       </Routes>
