@@ -28,7 +28,6 @@ function App() {
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-<<<<<<< HEAD
           <Navbar.Brand onClick={()=>{navigate('/shop')}}>
           <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt="logo" style={{width:80,cursor:"pointer"}} /></Navbar.Brand>
           <Nav className="me-auto">
@@ -36,14 +35,6 @@ function App() {
             <Nav.Link onClick={()=>{navigate('/about')}}>신상품</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/about/info')}}>정기배송</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/cart')}}>장바구니</Nav.Link>
-=======
-          <Navbar.Brand onClick={()=>{navigate('/shop')}}>프로젝트</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link onClick={()=>{navigate('/shop')}}>Home</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/about')}}>About</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/about/info')}}>Information</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/cart')}}>Cart</Nav.Link>
->>>>>>> 0c1e5e207b41ae20b61c03b577c1625b39d3a7fb
           </Nav>
         </Container>
       </Navbar>
