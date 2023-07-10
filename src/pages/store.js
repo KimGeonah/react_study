@@ -4,7 +4,7 @@ import {configureStore, createSlice} from '@reduxjs/toolkit';
 const user = createSlice({//state 생성
     name : 'user',
     //initialState : '홍길동',
-    initialState : {name :'홍길동', memberYear :1 },
+    initialState : {name :'김건아', memberYear :1 },
 
     reducers : {
         //changeName(){
@@ -14,7 +14,7 @@ const user = createSlice({//state 생성
         //    return state + ':Green'
         //}
         changeName(state){
-            state.name = state.name + ': Green'
+            state.name = state.name + ' [ 아무거나 ] '
         },
         changeYear(state, action){
             state.memberYear += action.payload

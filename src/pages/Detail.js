@@ -8,7 +8,8 @@ export default function Detail(props) {
     const {bests} = props
     const {id} = useParams()
     const dispatch = useDispatch()
-    
+
+
   return (
       <div>
       <h2>Detail</h2>
@@ -18,7 +19,7 @@ export default function Detail(props) {
       <button onClick={()=>{
         dispatch(addItem({id:bests[id].id, title: bests[id].title, count :1}))
       }}>장바구니</button>
-
       </div>
       )
+
 }
